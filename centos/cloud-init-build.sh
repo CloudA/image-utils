@@ -61,3 +61,6 @@ sudo yum -y remove bzr
 #    appropriate on a RHEL platform.) Warning, the defaults will replace your
 #    SSH server keys, opening a huge man-in-the-middle attack!)
 # 3) rpm -i cloud-init-*.noarch.rpm
+
+
+rpm -Uvh /tmp/cloud-init/cloud-init-*.noarch.rpm
