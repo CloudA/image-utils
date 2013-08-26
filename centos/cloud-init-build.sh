@@ -42,7 +42,6 @@ cd cloud-init
 # because RHEL5 doesn't support some of the packages
 mv Requires Requires.old
 echo "simplejson" > Requires
-echo "jsonpatch" > Requires
 sed -i "s/configobj/simplejson/g" packages/brpm
 
 # make the RPM packages:
