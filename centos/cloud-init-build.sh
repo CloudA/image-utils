@@ -62,5 +62,8 @@ sudo yum -y remove bzr
 #    SSH server keys, opening a huge man-in-the-middle attack!)
 # 3) rpm -i cloud-init-*.noarch.rpm
 
-
+#Install RPM
 rpm -Uvh /tmp/cloud-init/cloud-init-*.noarch.rpm
+
+#Fix Python 2.6 compatibility issue
+sed -i "s/{k: v for k, v in child.attributes.items()}/attrs = {}\n        for k, v in child.attributes.items():\n                attrs[k] = v/" /usr/lib/python2.6/site-packages/cloudinit/sources/DataSourceAzure.py
