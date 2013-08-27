@@ -35,8 +35,8 @@ then
 fi
 
 echo "--- Install Cloud Utilities ---"
-./cloud-init-build.sh
-./cloud-growpart.sh
+$(pwd)/cloud-init-build.sh
+$(pwd)/cloud-growpart.sh
 
 echo -n "" > /root/.bash_history
 
