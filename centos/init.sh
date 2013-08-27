@@ -17,13 +17,17 @@ rm -f /etc/udev/rules.d/70-persistent-net.rules
 ln -s /dev/null /etc/udev/rules.d/70-persistent-net.rules
 echo ""
 
+echo "--- Disable SELinux ---"
+setenforce 0
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
+
 echo "--- Update VM ---"
 rpm -Uvh http://fedora.mirror.nexicom.net/epel/6/i386/epel-release-6-8.noarch.rpm
 yum -y update
 
 CURRENT_KERNEL=$(uname -r)
 LATEST_KERNEL=$(rpm -qa kernel | sed 's/kernel-//' | tail -n 1)
-if [ "$CURRENT_KERNEL" != "$LATEST_KERNEL"]
+if [ "$CURRENT_KERNEL" != "$LATEST_KERNEL"] then
 	echo "$(pwd)/init.sh" >> /root/.bashrc
 	reboot
 fi
