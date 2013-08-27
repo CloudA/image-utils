@@ -3,7 +3,7 @@
 cd /tmp
 
 echo 'Installing dependencies...'
-yum -y install git euca2ools qemu-img
+yum -y install git euca2ools qemu-img python-paramiko
 
 echo 'Getting centos-image-resize and cloud-utils...'
 git clone https://github.com/CloudA/centos-image-resize.git 
