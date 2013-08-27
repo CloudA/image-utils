@@ -32,5 +32,7 @@ echo "--- Install Cloud Utilities ---"
 ./cloud-init-build.sh
 ./cloud-growpart.sh
 
+echo -n "" > /root/.bash_history
+
 echo "--- VM Now Cloud Ready ---"
 exit 0
