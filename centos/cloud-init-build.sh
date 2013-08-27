@@ -7,6 +7,8 @@ set -e
 # This will have undefined behavior on non-RHEL6 systems but should work on CentOS 6.
 # Ubuntu and Amazon already have cloud-init.
 
+cp -f cloud.cfg /tmp
+
 # temporary build directory
 cd /tmp
 
@@ -64,6 +66,7 @@ sudo yum -y remove bzr
 
 #Install RPM
 rpm -Uvh /tmp/cloud-init/cloud-init-*.noarch.rpm
+cp -f ../cloud.cfg /etc/cloud/cloud.cfg
 
 #Fix Python 2.6 compatibility issue
 sed -i "s/{k: v for k, v in child.attributes.items()}/attrs = {}\n        for k, v in child.attributes.items():\n                attrs[k] = v/" /usr/lib/python2.6/site-packages/cloudinit/sources/DataSourceAzure.py
