@@ -31,6 +31,7 @@ if [ "$CURRENT_KERNEL" != "$LATEST_KERNEL" ]
 then
 	echo "$(pwd)/init.sh" >> /root/.bashrc
 	reboot
+	exit 0 
 fi
 
 echo "--- Install Cloud Utilities ---"
