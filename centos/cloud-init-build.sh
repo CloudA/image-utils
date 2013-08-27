@@ -19,11 +19,6 @@ sudo yum -y install redhat-lsb
 R=$(lsb_release -rs | cut -f1 -d.)
 r=$(lsb_release -rs | cut -f2 -d.)
 
-# download pip from EPEL
-# optional if EPEL mirrors already configured-- highly recommended!
-# rpm -Uvh http://dl.fedoraproject.org/pub/epel/$R/x86_64/epel-release-$R-$r.noarch.rpm
-#wget http://dl.fedoraproject.org/pub/epel/$R/x86_64/python-pip-0.8-1.el$R.noarch.rpm
-
 # install needed rhel rpms and pip, bzr is available in epel
 yum install -y bzr rpm-build python-devel python-simplejson python-pip*rpm make python-setuptools python-cheetah python-pip
 

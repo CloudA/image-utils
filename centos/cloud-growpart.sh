@@ -29,8 +29,3 @@ chmod +x centos-image-mod.sh
 chmod +x init-part
 ./centos-image-mod.sh
 echo 'Done.'
-
-echo 'Remove udev net rules...'
-rm -f /etc/udev/rules.d/70-persistent-net.rules
-ln -s /dev/null /etc/udev/rules.d/70-persistent-net.rules
-echo 'Done.'
