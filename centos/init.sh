@@ -4,7 +4,7 @@ echo "--- Clean bashrc ---"
 sed -i 's/.*init.sh//' /root/.bashrc
 
 echo "--- Installing basic packages ---"
-yum -y install wget openssh-clients
+yum -y install wget openssh-clients vim
 
 echo ""
 echo "--- Configuring Network ---"
@@ -27,7 +27,8 @@ yum -y update
 
 CURRENT_KERNEL=$(uname -r)
 LATEST_KERNEL=$(rpm -qa kernel | sed 's/kernel-//' | tail -n 1)
-if [ "$CURRENT_KERNEL" != "$LATEST_KERNEL"] then
+if [ "$CURRENT_KERNEL" != "$LATEST_KERNEL" ] 
+then
 	echo "$(pwd)/init.sh" >> /root/.bashrc
 	reboot
 fi
