@@ -21,6 +21,7 @@ echo 'Modify init...'
 sed -i '/cp \/boot\/grub\/grub.conf/i chmod +x ${install_dir}/init-part' centos-image-resize/centos-image-mod.sh
 cd centos-image-resize/
 chmod +x centos-image-mod.sh
+chmod +x init-part
 ./centos-image-mod.sh
 echo 'Done.'
 
