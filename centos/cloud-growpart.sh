@@ -6,7 +6,7 @@ echo 'Installing dependencies...'
 yum -y install git euca2ools qemu-img
 
 echo 'Getting centos-image-resize and cloud-utils...'
-git clone https://github.com/flegmatik/centos-image-resize.git
+git clone https://github.com/CloudA/centos-image-resize.git 
 wget http://dl.fedoraproject.org/pub/epel/6/x86_64/cloud-utils-0.27-5.el6.noarch.rpm
 wget http://dl.fedoraproject.org/pub/epel/6/x86_64/cloud-utils-growpart-0.27-5.el6.noarch.rpm
 if [ "$(uname -m)" == "i686" ]
