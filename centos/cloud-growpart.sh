@@ -16,11 +16,11 @@ fi
 echo 'Done.'
 
 echo 'Installing cloud-utils...'
-rpm -Uvh cloud-utils*.rpm
 if [ "$(uname -m)" == "i686" ]
 then
 	rpm -Uvh qemu-img*.rpm
 fi
+rpm -Uvh cloud-utils*.rpm
 echo 'Done.'
 
 echo 'Modify init...'
