@@ -34,10 +34,16 @@ then
 	exit 0 
 fi
 
+echo "--- Disable Grub Timeout ---"
+sed -i 's/^timeout=/timeout=0/' /boot/grub/grub.conf
+
 echo "--- Install Cloud Utilities ---"
 cd /root/image-utils/centos/
 $(pwd)/cloud-init-build.sh
 $(pwd)/cloud-growpart.sh
+
+echo "--- Set New Root Password ---"
+passwd root
 
 echo -n "" > /root/.bash_history
 
