@@ -35,6 +35,7 @@ then
 fi
 
 echo "--- Install Cloud Utilities ---"
+cd /root/image-utils/
 $(pwd)/cloud-init-build.sh
 $(pwd)/cloud-growpart.sh
 
