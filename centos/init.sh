@@ -45,6 +45,8 @@ $(pwd)/cloud-growpart.sh
 echo "--- Set New Root Password ---"
 passwd root
 
+echo "--- Cleanup ---"
+find /var/log -type f -exec rm -f {} \;
 echo -n "" > /root/.bash_history
 
 echo "--- VM Now Cloud Ready ---"
