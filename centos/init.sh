@@ -1,5 +1,5 @@
 #!/bin/bash
-
+unset HISTFILE
 echo "--- Clean bashrc ---"
 sed -i 's/.*init.sh//' /root/.bashrc
 
@@ -34,6 +34,7 @@ then
 	exit 0 
 fi
 
+unset HISTFILE
 echo "--- Disable Grub Timeout ---"
 sed -i 's/^timeout=/timeout=0/' /boot/grub/grub.conf
 
@@ -48,6 +49,7 @@ passwd root
 echo "--- Cleanup ---"
 find /var/log -type f -exec rm -f {} \;
 echo -n "" > /root/.bash_history
+rm -Rf /root/install.log* /root/anaconda-ks.cfg
 
 echo "--- VM Now Cloud Ready ---"
 exit 0
