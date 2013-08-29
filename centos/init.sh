@@ -35,7 +35,7 @@ then
 fi
 
 echo "--- Install Cloud Utilities ---"
-cd /root/image-utils/
+cd /root/image-utils/centos/
 $(pwd)/cloud-init-build.sh
 $(pwd)/cloud-growpart.sh
 
