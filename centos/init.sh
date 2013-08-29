@@ -19,7 +19,7 @@ echo ""
 
 echo "--- Disable SELinux ---"
 setenforce 0
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 
 echo "--- Update VM ---"
 rpm -Uvh http://fedora.mirror.nexicom.net/epel/6/i386/epel-release-6-8.noarch.rpm
