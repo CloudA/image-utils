@@ -26,7 +26,7 @@ rpm -Uvh http://fedora.mirror.nexicom.net/epel/6/i386/epel-release-6-8.noarch.rp
 yum -y update
 
 CURRENT_KERNEL=$(uname -r)
-LATEST_KERNEL=$(rpm -qa kernel | sed 's/kernel-//' | tail -n 1)
+LATEST_KERNEL=$(rpm -qa kernel | sed 's/kernel-//' | sort -r | tail -n 1)
 if [ "$CURRENT_KERNEL" != "$LATEST_KERNEL" ] 
 then
 	echo "$(pwd)/init.sh" >> /root/.bashrc
