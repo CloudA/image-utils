@@ -46,6 +46,10 @@ $(pwd)/cloud-growpart.sh
 echo "--- Set New Root Password ---"
 passwd root
 
+echo "--- Disable IPTables ---"
+/etc/init.d/iptables top
+chkconfig iptables off
+
 echo "--- Cleanup ---"
 find /var/log -type f -exec rm -f {} \;
 echo -n "" > /root/.bash_history
