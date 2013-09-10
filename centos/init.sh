@@ -52,6 +52,7 @@ chkconfig iptables off
 
 echo "--- Cleanup ---"
 find /var/log -type f -exec rm -f {} \;
+rm -f /root/.bzr.log
 echo -n "" > /root/.bash_history
 rm -Rf /root/install.log* /root/anaconda-ks.cfg
 
